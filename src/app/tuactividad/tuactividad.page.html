@@ -1,0 +1,69 @@
+<ion-header class="app-header">
+  <ion-toolbar>
+    <div class="header-content">
+      <div class="header-left">
+        <img class="logo" src="assets/icon/logocop.png" alt="TaxisYa Logo" />
+        <div class="brand-info">
+          <div class="brand-name">Tu actividad</div>
+          <div class="location">El Empalme</div>
+        </div>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list class="activity-list">
+    <ion-item>
+      <ion-label>
+        <h2>Viaje Nº001</h2>
+        <p>Urb. Miraflores</p>
+      </ion-label>
+      <ion-note slot="end">12:30 PM</ion-note>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <h2>Viaje Nº002</h2>
+        <p>Av. Principal</p>
+      </ion-label>
+      <ion-note slot="end">2:15 PM</ion-note>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <h2>Viaje Nº003</h2>
+        <p>Centro Comercial</p>
+      </ion-label>
+      <ion-note slot="end">4:45 PM</ion-note>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <h2>Viaje Nº004</h2>
+        <p>Terminal Terrestre</p>
+      </ion-label>
+      <ion-note slot="end">6:20 PM</ion-note>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<!-- Footer Navigation -->
+<ion-footer class="app-footer">
+  <ion-toolbar>
+    <ion-buttons class="footer-buttons">
+      <ion-button class="footer-button" (click)="goToHome()">
+        <div class="button-content">
+          <ion-icon name="home-outline"></ion-icon>
+          <span>Inicio</span>
+        </div>
+      </ion-button>
+      <ion-button class="footer-button" (click)="goToConfig()">
+        <div class="button-content">
+          <ion-icon name="settings-outline"></ion-icon>
+          <span>Configuración</span>
+        </div>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

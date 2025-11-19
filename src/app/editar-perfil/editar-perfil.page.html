@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/folder"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Editar Perfil</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="guardarCambios()">
+        Guardar
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="profile-header">
+    <div class="avatar-container">
+      <ion-avatar class="large-avatar">
+        <img [src]="profileImage" alt="Foto de perfil" />
+      </ion-avatar>
+      <ion-button fill="clear" class="change-photo-button" (click)="cambiarFoto()">
+        <ion-icon name="camera-outline"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
+
+  <div class="profile-form">
+    <ion-list>
+      <ion-item-group>
+        <ion-item-divider>
+          <ion-label>Información Personal</ion-label>
+        </ion-item-divider>
+
+        <ion-item>
+          <ion-label position="stacked">Nombre Completo</ion-label>
+          <ion-input [(ngModel)]="userData.nombre" (ionChange)="onChange()" placeholder="Tu nombre"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Teléfono</ion-label>
+          <ion-input [(ngModel)]="userData.telefono" (ionChange)="onChange()" type="tel" placeholder="Tu teléfono"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Correo Electrónico</ion-label>
+          <ion-input [(ngModel)]="userData.email" (ionChange)="onChange()" type="email" placeholder="Tu correo"></ion-input>
+        </ion-item>
+      </ion-item-group>
+
+      <ion-item-group>
+        <ion-item-divider>
+          <ion-label>Preferencias</ion-label>
+        </ion-item-divider>
+
+        <ion-item>
+          <ion-label>Notificaciones Push</ion-label>
+          <ion-toggle [(ngModel)]="userData.notificaciones" (ionChange)="onChange()"></ion-toggle>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Ubicación en segundo plano</ion-label>
+          <ion-toggle [(ngModel)]="userData.ubicacion" (ionChange)="onChange()"></ion-toggle>
+        </ion-item>
+      </ion-item-group>
+    </ion-list>
+  </div>
+
+  <div class="danger-zone">
+    <ion-button expand="block" color="danger" fill="outline" (click)="eliminarCuenta()">
+      Eliminar Cuenta
+    </ion-button>
+  </div>
+</ion-content>

@@ -1,21 +1,108 @@
-<ion-header [translucent]="true">
+<ion-header class="app-header" [translucent]="true">
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>{{ folder }}</ion-title>
+    <div class="header-content">
+      <div class="header-left">
+        <img class="logo" src="assets/icon/logocop.png" alt="TaxisYa Logo" />
+        <div class="brand-info">
+          <div class="brand-name">TaxisYa</div>
+          <div class="location">El Empalme</div>
+        </div>
+      </div>
+      <ion-buttons slot="end">
+        <ion-button (click)="showNotifications($event)">
+          <ion-badge class="notification-badge">3</ion-badge>
+          <ion-icon name="notifications-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </div>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">{{ folder }}</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="profile-card">
+    <div class="profile-left">
+      <ion-avatar>
+        <img src="assets/icon/usuario.png" alt="Profile" />
+      </ion-avatar>
+      <div class="profile-info">
+        <h2>Bienvenido,...</h2>
+        <ion-button size="small" fill="outline" (click)="goToEditProfile()">Editar Perfil</ion-button>
+      </div>
+    </div>
   </div>
+
+
+  <ion-grid class="quick-actions">
+    <ion-row>
+      <ion-col size="4">
+        <ion-button fill="clear" class="action-button" routerLink="/solicitar">
+          <div class="action-content">
+            <ion-icon name="car-outline"></ion-icon>
+            <span>Solicitar</span>
+          </div>
+        </ion-button>
+      </ion-col>
+      <ion-col size="4">
+        <ion-button fill="clear" class="action-button" (click)="goToActivity()">
+          <div class="action-content">
+            <ion-icon name="list-outline"></ion-icon>
+            <span>Actividad</span>
+          </div>
+        </ion-button>
+      </ion-col>
+      <ion-col size="4">
+        <ion-button fill="clear" class="action-button" (click)="goToSupport()">
+          <div class="action-content">
+            <ion-icon name="help-circle-outline"></ion-icon>
+            <span>Soporte</span>
+          </div>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <div class="section-header">
+    <h2>Información</h2>
+    <ion-button fill="clear" size="small">
+      Mirar Todo <ion-icon name="chevron-forward-outline"></ion-icon>
+    </ion-button>
+  </div>
+
+  <ion-grid class="location-grid">
+    <ion-row>
+      <ion-col size="6" *ngFor="let location of locations">
+        <ion-card>
+          <img [src]="location.image" [alt]="location.title"/>
+          <ion-card-header>
+            <ion-card-title>{{location.title}}</ion-card-title>
+            <ion-card-subtitle>
+              <ion-icon name="location-outline"></ion-icon>
+              {{location.address}}
+            </ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
+
+
+<ion-footer class="app-footer">
+  <ion-toolbar>
+    <ion-buttons class="footer-buttons">
+      <ion-button class="footer-button active">
+        <div class="button-content">
+          <ion-icon name="home-outline"></ion-icon>
+          <span>Inicio</span>
+        </div>
+      </ion-button>
+      <ion-button class="footer-button" (click)="goToConfig()">
+        <div class="button-content">
+          <ion-icon name="settings-outline"></ion-icon>
+          <span>Configuración</span>
+        </div>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

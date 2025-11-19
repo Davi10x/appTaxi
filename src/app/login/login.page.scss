@@ -1,0 +1,161 @@
+.login-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 24px;
+  background: linear-gradient(135deg, #FFA500 0%, #FFD700 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.login-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.logo-container {
+  text-align: center;
+  margin-bottom: 48px;
+  position: relative;
+  z-index: 2;
+
+  .app-logo {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 20px;
+    border-radius: 30px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .app-name {
+    font-size: 36px;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+    letter-spacing: -0.5px;
+  }
+
+  .app-subtitle {
+    font-size: 18px;
+    color: #666;
+    margin: 8px 0 0;
+    font-weight: 500;
+  }
+}
+
+.login-form {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+
+  .custom-input {
+    --background: transparent;
+    --border-color: transparent;
+    --border-radius: 16px;
+    --padding-start: 16px;
+    --padding-end: 16px;
+    --highlight-height: 0;
+    margin-bottom: 16px;
+    background: #f8f9fa;
+    border-radius: 16px;
+
+    &.item-has-focus {
+      --background: #fff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    ion-icon {
+      color: #666;
+      margin-right: 12px;
+      font-size: 20px;
+    }
+
+    ion-input {
+      --padding-start: 8px;
+      --placeholder-color: #999;
+      --placeholder-opacity: 0.8;
+      font-size: 16px;
+    }
+  }
+
+  .forgot-password {
+    text-align: right;
+    margin: 16px 0 24px;
+
+    a {
+      color: #333;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      opacity: 0.8;
+      transition: opacity 0.2s ease;
+
+      &:active {
+        opacity: 0.6;
+      }
+    }
+  }
+
+  .login-button {
+    --background: #333;
+    --border-radius: 16px;
+    --box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    margin: 8px 0 20px;
+    height: 52px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: -0.2px;
+
+    &:active {
+      --background: #444;
+    }
+  }
+
+  .create-account {
+    ion-button {
+      --border-color: #333;
+      --border-style: solid;
+      --border-width: 2px;
+      --color: #333;
+      --border-radius: 16px;
+      height: 52px;
+      font-size: 16px;
+      font-weight: 600;
+      text-transform: none;
+      letter-spacing: -0.2px;
+
+      &:active {
+        --background: rgba(0, 0, 0, 0.05);
+      }
+    }
+  }
+}
+
+// Efecto de fondo
+.login-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 60%);
+  animation: rotate 30s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

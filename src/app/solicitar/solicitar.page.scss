@@ -1,0 +1,68 @@
+.map-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+.search-card {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  margin: 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  .search-item {
+    --padding-start: 0;
+    --inner-padding-end: 0;
+    --background: transparent;
+
+    ion-icon {
+      color: var(--ion-color-primary);
+      margin-right: 12px;
+      font-size: 20px;
+    }
+
+    &.destination {
+      margin-top: 8px;
+      border-top: 1px solid var(--ion-color-light);
+      padding-top: 8px;
+    }
+  }
+
+  .destination-input {
+    --padding-start: 0;
+    --placeholder-color: var(--ion-color-medium);
+  }
+}
+
+.confirmation-card {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  margin: 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  .trip-info {
+    margin-bottom: 16px;
+    
+    h2 {
+      margin: 8px 0;
+      font-size: 14px;
+      font-weight: normal;
+    }
+  }
+
+  ion-button {
+    margin: 0;
+    --border-radius: 8px;
+  }
+}

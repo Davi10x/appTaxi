@@ -1,0 +1,53 @@
+<ion-header class="app-header">
+  <ion-toolbar>
+    <div class="header-content">
+      <div class="header-left">
+        <img class="logo" src="assets/icon/logocop.png" alt="TaxisYa Logo" />
+        <div class="brand-info">
+          <div class="brand-name">Configuración</div>
+          <div class="location">El Empalme</div>
+        </div>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list class="settings-list">
+    <ion-item button detail>
+      <ion-icon slot="start" name="person-outline"></ion-icon>
+      <ion-label>Bienvenido, ...</ion-label>
+      <ion-note slot="end">Editar Perfil</ion-note>
+    </ion-item>
+
+    <ion-item button detail>
+      <ion-icon slot="start" name="settings-outline"></ion-icon>
+      <ion-label>Preferencias</ion-label>
+    </ion-item>
+
+    <ion-item button detail color="danger" (click)="confirmLogout()">
+      <ion-icon slot="start" name="log-out-outline"></ion-icon>
+      <ion-label>Cerrar sesión</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+
+<ion-footer class="app-footer">
+  <ion-toolbar>
+    <ion-buttons class="footer-buttons">
+      <ion-button class="footer-button" (click)="goToHome()">
+        <div class="button-content">
+          <ion-icon name="home-outline"></ion-icon>
+          <span>Inicio</span>
+        </div>
+      </ion-button>
+      <ion-button class="footer-button active">
+        <div class="button-content">
+          <ion-icon name="settings-outline"></ion-icon>
+          <span>Configuración</span>
+        </div>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

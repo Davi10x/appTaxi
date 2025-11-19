@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/folder"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Solicitar Taxi</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="map-container">
+    <div id="map"></div>
+    
+    <ion-card class="search-card">
+      <ion-item class="search-item">
+        <ion-icon name="location-outline"></ion-icon>
+        <ion-input
+          [(ngModel)]="origen"
+          class="destination-input"
+          placeholder="¿Dónde estás?"
+        ></ion-input>
+      </ion-item>
+      
+      <ion-item class="search-item destination">
+        <ion-icon name="navigate-outline"></ion-icon>
+        <ion-input
+          [(ngModel)]="destino"
+          class="destination-input"
+          placeholder="¿A dónde vas?"
+        ></ion-input>
+      </ion-item>
+    </ion-card>
+
+    <ion-card class="confirmation-card">
+      <div class="trip-info">
+        <h2>Distancia estimada: -- km</h2>
+        <h2>Tiempo estimado: -- min</h2>
+        <h2>Costo estimado: $--</h2>
+      </div>
+      <ion-button expand="block" (click)="solicitarTaxi()">
+        Confirmar Taxi
+      </ion-button>
+    </ion-card>
+  </div>
+</ion-content>

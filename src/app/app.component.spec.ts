@@ -1,7 +1,18 @@
 import { TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
-
+import { IonAlert, IonButton } from '@ionic/angular/standalone';
 import { AppComponent } from './app.component';
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-example',
+  templateUrl: 'example.component.html',
+  styleUrls: ['example.component.css'],
+  imports: [IonAlert, IonButton],
+})
+export class ExampleComponent {
+  alertButtons = ['Action'];
+}
 
 describe('AppComponent', () => {
   beforeEach(async () => {

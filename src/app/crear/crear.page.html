@@ -1,0 +1,140 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/login" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Crear Cuenta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="register-container">
+    <div class="welcome-text">
+      <h1>¡Únete a TaxisYa!</h1>
+      <p>Completa tus datos para crear tu cuenta</p>
+    </div>
+
+    <form (ngSubmit)="onCreateAccount()" class="register-form">
+      <!-- Nombres -->
+      <ion-item class="custom-input" lines="none">
+        <ion-icon name="person-outline" slot="start" color="primary"></ion-icon>
+        <ion-input 
+          [(ngModel)]="userData.nombres" 
+          name="nombres" 
+          type="text" 
+          placeholder="Nombres"
+          required>
+        </ion-input>
+      </ion-item>
+
+      <!-- Apellidos -->
+      <ion-item class="custom-input" lines="none">
+        <ion-icon name="person-outline" slot="start" color="primary"></ion-icon>
+        <ion-input 
+          [(ngModel)]="userData.apellidos" 
+          name="apellidos" 
+          type="text" 
+          placeholder="Apellidos"
+          required>
+        </ion-input>
+      </ion-item>
+
+      <!-- Cédula -->
+      <ion-item class="custom-input" lines="none" [class.valid]="validations.cedula.valid" [class.invalid]="userData.cedula && !validations.cedula.valid">
+        <ion-icon name="id-card-outline" slot="start" color="primary"></ion-icon>
+        <ion-input 
+          [(ngModel)]="userData.cedula" 
+          name="cedula" 
+          type="tel" 
+          placeholder="Cédula (10 dígitos)"
+          maxlength="10"
+          (ionInput)="onlyNumbers($event, 'cedula')"
+          (ionBlur)="onCedulaChange()"
+          required>
+        </ion-input>
+        <ion-icon 
+          *ngIf="userData.cedula" 
+          slot="end" 
+          [name]="validations.cedula.valid ? 'checkmark-circle-outline' : 'close-circle-outline'"
+          [color]="validations.cedula.valid ? 'success' : 'danger'">
+        </ion-icon>
+      </ion-item>
+      <ion-text *ngIf="userData.cedula" [color]="validations.cedula.valid ? 'success' : 'danger'" class="validation-message">
+        <small>{{ validations.cedula.message }}</small>
+      </ion-text>
+
+      <!-- Teléfono -->
+      <ion-item class="custom-input" lines="none" [class.valid]="validations.telefono.valid" [class.invalid]="userData.telefono && !validations.telefono.valid">
+        <ion-icon name="call-outline" slot="start" color="primary"></ion-icon>
+        <ion-input 
+          [(ngModel)]="userData.telefono" 
+          name="telefono" 
+          type="tel" 
+          placeholder="Teléfono (10 dígitos)"
+          maxlength="10"
+          (ionInput)="onlyNumbers($event, 'telefono')"
+          (ionBlur)="onTelefonoChange()"
+          required>
+        </ion-input>
+        <ion-icon 
+          *ngIf="userData.telefono" 
+          slot="end" 
+          [name]="validations.telefono.valid ? 'checkmark-circle-outline' : 'close-circle-outline'"
+          [color]="validations.telefono.valid ? 'success' : 'danger'">
+        </ion-icon>
+      </ion-item>
+      <ion-text *ngIf="userData.telefono" [color]="validations.telefono.valid ? 'success' : 'danger'" class="validation-message">
+        <small>{{ validations.telefono.message }}</small>
+      </ion-text>
+
+      <!-- Correo electrónico -->
+      <ion-item class="custom-input" lines="none" [class.valid]="validations.email.valid" [class.invalid]="userData.email && !validations.email.valid">
+        <ion-icon name="mail-outline" slot="start" color="primary"></ion-icon>
+        <ion-input 
+          [(ngModel)]="userData.email" 
+          name="email" 
+          type="email" 
+          placeholder="Correo electrónico"
+          (ionBlur)="onEmailChange()"
+          required>
+        </ion-input>
+        <ion-icon 
+          *ngIf="userData.email" 
+          slot="end" 
+          [name]="validations.email.valid ? 'checkmark-circle-outline' : 'close-circle-outline'"
+          [color]="validations.email.valid ? 'success' : 'danger'">
+        </ion-icon>
+      </ion-item>
+      <ion-text *ngIf="userData.email" [color]="validations.email.valid ? 'success' : 'danger'" class="validation-message">
+        <small>{{ validations.email.message }}</small>
+      </ion-text>
+
+      <!-- Dirección -->
+      <ion-item class="custom-input" lines="none">
+        <ion-icon name="location-outline" slot="start" color="primary"></ion-icon>
+        <ion-input 
+          [(ngModel)]="userData.direccion" 
+          name="direccion" 
+          type="text" 
+          placeholder="Dirección"
+          required>
+        </ion-input>
+      </ion-item>
+
+      <ion-button 
+        expand="block" 
+        type="submit" 
+        class="register-button"
+        [disabled]="!userData.nombres || !userData.apellidos || !validations.cedula.valid || !validations.telefono.valid || !validations.email.valid">
+        Crear Cuenta
+      </ion-button>
+    </form>
+
+    <div class="login-link">
+      <ion-text color="medium">
+        ¿Ya tienes cuenta? 
+        <a routerLink="/login">Inicia sesión aquí</a>
+      </ion-text>
+    </div>
+  </div>
+</ion-content>
