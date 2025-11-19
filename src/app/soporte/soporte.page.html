@@ -3,12 +3,66 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/folder"></ion-back-button>
     </ion-buttons>
-    <ion-title>Mapa</ion-title>
+    <ion-title>Soporte</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="person-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div class="map-container">
-    <div #map id="map"></div>
+  <div class="soporte-container">
+    <!-- Header con ubicación -->
+    <div class="header-info">
+      <div class="location-info">
+        <img src="assets/icon/logocop.png" alt="Logo" class="logo-small">
+        <div class="location-text">
+          <p class="taxi-name">Taxeye</p>
+          <p class="location-name">📍 El Empalme</p>
+        </div>
+      </div>
+      <ion-button fill="clear" color="danger">
+        <ion-icon name="notifications-outline"></ion-icon>
+      </ion-button>
+    </div>
+
+    <!-- Título principal -->
+    <h2 class="main-title">Soporte</h2>
+
+    <!-- Botones de soporte -->
+    <div class="support-buttons">
+      <ion-button expand="block" class="support-btn" (click)="solicitarAyuda()">
+        Solicitar ayuda
+      </ion-button>
+
+      <ion-button expand="block" class="support-btn" (click)="reportarActividad()">
+        Reportar actividad sospechosa
+      </ion-button>
+
+      <ion-button expand="block" class="support-btn" (click)="verGuias()">
+        Guías
+      </ion-button>
+
+      <ion-button expand="block" class="support-btn" (click)="verPreguntas()">
+        Preguntas frecuentes
+      </ion-button>
+
+      <ion-button expand="block" class="support-btn" (click)="verPoliticas()">
+        Ver políticas
+      </ion-button>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-buttons">
+      <ion-button fill="clear" (click)="goHome()">
+        <ion-icon name="home-outline"></ion-icon>
+      </ion-button>
+      <ion-button fill="clear" (click)="goConfig()">
+        <ion-icon name="settings-outline"></ion-icon>
+        <p>Configuración</p>
+      </ion-button>
+    </div>
   </div>
 </ion-content>

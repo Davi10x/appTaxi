@@ -78,6 +78,25 @@ export class ConfiguracionPage {
     this.navCtrl.navigateRoot('/folder');
   }
 
+  goToEditProfile() {
+    this.navCtrl.navigateForward('/editar-perfil');
+  }
+
+  goToPreferences() {
+    // Por ahora muestra una alerta, luego se puede crear una página de preferencias
+    this.showPreferences();
+  }
+
+  async showPreferences() {
+    const alert = await this.alertController.create({
+      header: 'Preferencias',
+      message: 'Esta sección estará disponible próximamente para configurar notificaciones, idioma, tema, etc.',
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
+
   logout() {
    
     console.log('Cerrando sesión...');

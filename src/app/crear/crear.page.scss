@@ -1,5 +1,5 @@
 ion-content {
-  --background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
 }
 
 .register-container {
@@ -85,7 +85,7 @@ ion-content {
   }
 
   .register-button {
-    --background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
     --border-radius: 12px;
     margin-top: 24px;
     height: 56px;
@@ -93,12 +93,12 @@ ion-content {
     font-size: 16px;
     text-transform: none;
     letter-spacing: 0.5px;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 4px 15px rgba(251, 191, 36, 0.4);
     transition: all 0.3s ease;
 
     &:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+      box-shadow: 0 6px 20px rgba(251, 191, 36, 0.5);
     }
 
     &:disabled {

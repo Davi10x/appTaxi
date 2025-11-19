@@ -11,9 +11,16 @@
   <div class="map-container">
     <div id="map"></div>
     
+    <!-- Botón flotante para centrar en ubicación actual -->
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed" class="location-fab">
+      <ion-fab-button size="small" (click)="centerOnMyLocation()">
+        <ion-icon name="locate-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    
     <ion-card class="search-card">
       <ion-item class="search-item">
-        <ion-icon name="location-outline"></ion-icon>
+        <ion-icon name="location-outline" color="primary"></ion-icon>
         <ion-input
           [(ngModel)]="origen"
           class="destination-input"
@@ -22,22 +29,35 @@
       </ion-item>
       
       <ion-item class="search-item destination">
-        <ion-icon name="navigate-outline"></ion-icon>
+        <ion-icon name="navigate-outline" color="warning"></ion-icon>
         <ion-input
           [(ngModel)]="destino"
           class="destination-input"
           placeholder="¿A dónde vas?"
         ></ion-input>
       </ion-item>
+
+      <ion-button expand="block" (click)="calcularRuta()" class="calc-btn">
+        Calcular Ruta
+      </ion-button>
     </ion-card>
 
     <ion-card class="confirmation-card">
       <div class="trip-info">
-        <h2>Distancia estimada: -- km</h2>
-        <h2>Tiempo estimado: -- min</h2>
-        <h2>Costo estimado: $--</h2>
+        <div class="info-item">
+          <span class="label">Distancia:</span>
+          <span class="value">{{ distancia }} km</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Tiempo:</span>
+          <span class="value">{{ tiempo }} min</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Costo estimado:</span>
+          <span class="value">${{ costo }}</span>
+        </div>
       </div>
-      <ion-button expand="block" (click)="solicitarTaxi()">
+      <ion-button expand="block" (click)="solicitarTaxi()" color="warning">
         Confirmar Taxi
       </ion-button>
     </ion-card>

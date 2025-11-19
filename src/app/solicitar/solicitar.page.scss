@@ -9,6 +9,17 @@
   height: 100%;
 }
 
+.location-fab {
+  margin-bottom: 320px;
+  margin-right: 10px;
+  
+  ion-fab-button {
+    --background: white;
+    --color: #fbbf24;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+}
+
 .search-card {
   position: absolute;
   top: 20px;
@@ -16,7 +27,9 @@
   right: 20px;
   margin: 0;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background: white;
+  padding: 16px;
 
   .search-item {
     --padding-start: 0;
@@ -24,21 +37,29 @@
     --background: transparent;
 
     ion-icon {
-      color: var(--ion-color-primary);
       margin-right: 12px;
-      font-size: 20px;
+      font-size: 22px;
     }
 
     &.destination {
-      margin-top: 8px;
+      margin-top: 12px;
       border-top: 1px solid var(--ion-color-light);
-      padding-top: 8px;
+      padding-top: 12px;
     }
   }
 
   .destination-input {
     --padding-start: 0;
     --placeholder-color: var(--ion-color-medium);
+    font-size: 15px;
+  }
+
+  .calc-btn {
+    margin-top: 16px;
+    --background: #fbbf24;
+    --border-radius: 8px;
+    height: 44px;
+    font-weight: 600;
   }
 }
 
@@ -49,20 +70,46 @@
   right: 20px;
   margin: 0;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background: white;
+  padding: 20px;
 
   .trip-info {
     margin-bottom: 16px;
     
-    h2 {
-      margin: 8px 0;
-      font-size: 14px;
-      font-weight: normal;
+    .info-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #f0f0f0;
+
+      &:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .label {
+        font-size: 14px;
+        color: #666;
+        font-weight: 500;
+      }
+
+      .value {
+        font-size: 16px;
+        color: #000;
+        font-weight: 600;
+      }
     }
   }
 
   ion-button {
     margin: 0;
     --border-radius: 8px;
+    height: 48px;
+    font-weight: 600;
+    font-size: 16px;
   }
 }

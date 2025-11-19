@@ -64,14 +64,24 @@
 
     ion-note {
       font-size: 14px;
-      color: var(--ion-color-primary);
     }
+  }
+}
 
-    &[color="danger"] {
-      --background: #fff1f1;
-      ion-icon, ion-label {
-        color: var(--ion-color-danger);
-      }
+.logout-section {
+  margin-top: 30px;
+  padding: 0 16px;
+
+  .logout-btn {
+    --border-radius: 12px;
+    height: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: none;
+    
+    ion-icon {
+      font-size: 22px;
+      margin-right: 8px;
     }
   }
 }
