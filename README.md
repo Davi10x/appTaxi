@@ -1,4 +1,4 @@
-# DavidStand - Aplicación de Taxi
+# taxisYa - Aplicación de Taxi
 
 ## 📱 Descripción
 DavidStand es una aplicación móvil desarrollada con Ionic 8 y Angular 20 para la gestión de servicios de taxi en Ecuador. La aplicación permite a los usuarios registrarse, solicitar taxis, consultar su actividad y gestionar su perfil.
