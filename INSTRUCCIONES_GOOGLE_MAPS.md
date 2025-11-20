@@ -15,7 +15,7 @@
 1. Ve a: https://console.cloud.google.com/
 2. Haz clic en "Seleccionar un proyecto" → "Proyecto nuevo"
 3. Ponle un nombre (ejemplo: "TaxiApp")
-4. Clic en "Crear"
+4. Clic en "Crear"  
 
 ### Paso 2: Habilitar las APIs necesarias
 
